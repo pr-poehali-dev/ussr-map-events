@@ -349,11 +349,11 @@ export default function Index() {
                 <CardDescription>Выберите регион для просмотра исторических событий</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative rounded-lg overflow-hidden mb-6" style={{ height: "600px" }}>
+                <div className="relative rounded-lg overflow-hidden mb-6 bg-muted/30" style={{ height: "600px" }}>
                   <img 
-                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/85298473-3104-4169-907b-3f087f7a6d8e.jpg"
+                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/467927c3-822b-40af-a0a1-008b12f88180.jpg"
                     alt="Карта СССР"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   {mapRegions.map((region) => (
                     <button
