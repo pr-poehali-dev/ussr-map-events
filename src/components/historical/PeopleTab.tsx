@@ -17,7 +17,17 @@ export default function PeopleTab({ figures }: PeopleTabProps) {
       <CardContent>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {figures.map((figure) => (
-            <Card key={figure.id} className="hover:shadow-lg transition-all hover:scale-105 border-primary/20">
+            <Card key={figure.id} className="hover:shadow-lg transition-all hover:scale-105 border-primary/20 overflow-hidden">
+              <div className="relative h-48 bg-gradient-to-br from-red-50 to-red-100">
+                <img 
+                  src={figure.imageUrl} 
+                  alt={figure.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
               <CardHeader>
                 <div className="flex items-start justify-between mb-2">
                   <Badge variant="outline" className="bg-primary/10">

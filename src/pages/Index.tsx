@@ -58,16 +58,16 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
-      <div className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+      <div className="border-b-2 border-red-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-soviet-gradient flex items-center justify-center">
-              <Icon name="MapPin" size={24} className="text-white" />
+            <div className="w-12 h-12 rounded-lg bg-soviet-gradient flex items-center justify-center shadow-md">
+              <Icon name="Star" size={24} className="text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold font-display">История СССР</h1>
-              <p className="text-sm text-muted-foreground">Интерактивный исторический портал</p>
+              <h1 className="text-2xl font-bold font-display text-red-800">История СССР</h1>
+              <p className="text-sm text-red-600">Интерактивный исторический портал</p>
             </div>
           </div>
         </div>

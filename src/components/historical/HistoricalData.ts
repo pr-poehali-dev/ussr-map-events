@@ -37,6 +37,7 @@ export interface HistoricalFigure {
   achievements: string[];
   quote: string;
   category: string;
+  imageUrl: string;
 }
 
 export const historicalEvents: HistoricalEvent[] = [
@@ -508,7 +509,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Создатель первого социалистического государства"
     ],
     quote: "Учиться, учиться и ещё раз учиться",
-    category: "Политики"
+    category: "Политики",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lenin_1920.jpg/220px-Lenin_1920.jpg"
   },
   {
     id: "stalin",
@@ -521,7 +523,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Превращение СССР в сверхдержаву"
     ],
     quote: "Кадры решают всё",
-    category: "Политики"
+    category: "Политики",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Stalin_1902.jpg/220px-Stalin_1902.jpg"
   },
   {
     id: "gagarin",
@@ -534,7 +537,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Символ космической эры"
     ],
     quote: "Поехали!",
-    category: "Космонавты"
+    category: "Космонавты",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Yuri_Gagarin_in_Sweden.jpg/220px-Yuri_Gagarin_in_Sweden.jpg"
   },
   {
     id: "korolev",
@@ -547,7 +551,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Основоположник практической космонавтики"
     ],
     quote: "Главное — не опоздать",
-    category: "Конструкторы"
+    category: "Конструкторы",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Sergei_Korolev_1938.jpg/220px-Sergei_Korolev_1938.jpg"
   },
   {
     id: "tereshkova",
@@ -560,7 +565,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "48 витков вокруг Земли"
     ],
     quote: "Эй! Небо, сними шляпу!",
-    category: "Космонавты"
+    category: "Космонавты",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/RIAN_archive_612748_Valentina_Tereshkova.jpg/220px-RIAN_archive_612748_Valentina_Tereshkova.jpg"
   },
   {
     id: "zhukov",
@@ -573,7 +579,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Четырежды Герой Советского Союза"
     ],
     quote: "В бою побеждает тот, кто твёрдо решил победить",
-    category: "Военные"
+    category: "Военные",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Zhukov_in_1940s.jpg/220px-Zhukov_in_1940s.jpg"
   },
   {
     id: "sakharov",
@@ -586,7 +593,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Лауреат Нобелевской премии мира"
     ],
     quote: "Мир, прогресс, права человека — эти три цели неразрывно связаны",
-    category: "Учёные"
+    category: "Учёные",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sakharov_1974.jpg/220px-Sakharov_1974.jpg"
   },
   {
     id: "kurchatov",
@@ -599,7 +607,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Основатель Института атомной энергии"
     ],
     quote: "Наука требует всего человека",
-    category: "Учёные"
+    category: "Учёные",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Igor_Kurchatov_1956.jpg/220px-Igor_Kurchatov_1956.jpg"
   },
   {
     id: "landau",
@@ -612,7 +621,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Автор курса теоретической физики"
     ],
     quote: "Главное в науке — новый взгляд на вещи",
-    category: "Учёные"
+    category: "Учёные",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Landau.jpg/220px-Landau.jpg"
   },
   {
     id: "tupolev",
@@ -625,7 +635,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Трижды Герой Социалистического Труда"
     ],
     quote: "Самолёт должен быть красивым",
-    category: "Конструкторы"
+    category: "Конструкторы",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Tupolev_1929.jpg/220px-Tupolev_1929.jpg"
   },
   {
     id: "kalashnikov",
@@ -638,7 +649,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Самое распространённое оружие в мире"
     ],
     quote: "Я создавал оружие для защиты Отечества",
-    category: "Конструкторы"
+    category: "Конструкторы",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mikhail_Kalashnikov_-_65th_Anniversary.jpg/220px-Mikhail_Kalashnikov_-_65th_Anniversary.jpg"
   },
   {
     id: "shostakovich",
@@ -651,7 +663,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Народный артист СССР"
     ],
     quote: "Содержание моей музыки — это человек",
-    category: "Деятели культуры"
+    category: "Деятели культуры",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dmitri_Shostakovich_credit_Deutsche_Fotothek_adjusted.jpg/220px-Dmitri_Shostakovich_credit_Deutsche_Fotothek_adjusted.jpg"
   },
   {
     id: "eisenstein",
@@ -664,7 +677,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Классик мирового кинематографа"
     ],
     quote: "Монтаж — нерв кинематографа",
-    category: "Деятели культуры"
+    category: "Деятели культуры",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sergei_Eisenstein_02.jpg/220px-Sergei_Eisenstein_02.jpg"
   },
   {
     id: "ulanova",
@@ -677,7 +691,8 @@ export const historicalFigures: HistoricalFigure[] = [
       "Легенда Большого театра"
     ],
     quote: "Танец — это поэзия движения",
-    category: "Деятели культуры"
+    category: "Деятели культуры",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Galina_Ulanova_1940s.jpg/220px-Galina_Ulanova_1940s.jpg"
   },
   {
     id: "yashin",
@@ -690,6 +705,7 @@ export const historicalFigures: HistoricalFigure[] = [
       "Заслуженный мастер спорта СССР"
     ],
     quote: "Главное — не допустить гол",
-    category: "Спортсмены"
+    category: "Спортсмены",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Lev_Yashin_1965.jpg/220px-Lev_Yashin_1965.jpg"
   }
 ];
