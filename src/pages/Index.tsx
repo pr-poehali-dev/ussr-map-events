@@ -38,9 +38,27 @@ interface MapRegion {
   keyEvents: string[];
 }
 
+interface HistoricalFigure {
+  id: string;
+  name: string;
+  role: string;
+  years: string;
+  achievements: string[];
+  quote: string;
+  category: string;
+}
+
 const historicalEvents: HistoricalEvent[] = [
   {
     id: "1",
+    year: 1917,
+    title: "Октябрьская революция",
+    description: "25 октября большевики во главе с Лениным свергли Временное правительство, началась новая эра",
+    region: "Петроград",
+    category: "Революция"
+  },
+  {
+    id: "2",
     year: 1922,
     title: "Образование СССР",
     description: "30 декабря был подписан договор об образовании Союза Советских Социалистических Республик",
@@ -48,7 +66,39 @@ const historicalEvents: HistoricalEvent[] = [
     category: "Политика"
   },
   {
-    id: "2",
+    id: "3",
+    year: 1928,
+    title: "Начало первой пятилетки",
+    description: "Старт индустриализации СССР, создание тяжёлой промышленности",
+    region: "Вся страна",
+    category: "Экономика"
+  },
+  {
+    id: "4",
+    year: 1933,
+    title: "Строительство Беломорканала",
+    description: "Завершение строительства канала, соединяющего Белое и Балтийское моря",
+    region: "Карелия",
+    category: "Инфраструктура"
+  },
+  {
+    id: "5",
+    year: 1935,
+    title: "Стахановское движение",
+    description: "Алексей Стаханов перевыполнил норму добычи угля в 14 раз, начало массового движения передовиков",
+    region: "Донбасс",
+    category: "Экономика"
+  },
+  {
+    id: "6",
+    year: 1936,
+    title: "Принятие Конституции СССР",
+    description: "Принята новая Конституция, провозгласившая построение основ социализма",
+    region: "Москва",
+    category: "Политика"
+  },
+  {
+    id: "7",
     year: 1941,
     title: "Начало Великой Отечественной войны",
     description: "22 июня нацистская Германия напала на СССР, началась Великая Отечественная война",
@@ -56,15 +106,23 @@ const historicalEvents: HistoricalEvent[] = [
     category: "Война"
   },
   {
-    id: "3",
-    year: 1961,
-    title: "Полёт Юрия Гагарина",
-    description: "12 апреля состоялся первый полёт человека в космос на корабле 'Восток-1'",
-    region: "Байконур",
-    category: "Космос"
+    id: "8",
+    year: 1942,
+    title: "Сталинградская битва",
+    description: "Начало переломной битвы, которая изменила ход войны в пользу СССР",
+    region: "Сталинград",
+    category: "Война"
   },
   {
-    id: "4",
+    id: "9",
+    year: 1943,
+    title: "Курская битва",
+    description: "Крупнейшее танковое сражение в истории, окончательный перелом в войне",
+    region: "Курск",
+    category: "Война"
+  },
+  {
+    id: "10",
     year: 1945,
     title: "Победа в Великой Отечественной войне",
     description: "9 мая Германия капитулировала, завершилась Великая Отечественная война",
@@ -72,12 +130,116 @@ const historicalEvents: HistoricalEvent[] = [
     category: "Война"
   },
   {
-    id: "5",
+    id: "11",
+    year: 1949,
+    title: "Первое испытание ядерного оружия",
+    description: "СССР провёл успешное испытание атомной бомбы, став второй ядерной державой",
+    region: "Семипалатинск",
+    category: "Наука"
+  },
+  {
+    id: "12",
+    year: 1953,
+    title: "Смерть Сталина",
+    description: "5 марта скончался И.В. Сталин, руководивший страной 30 лет",
+    region: "Москва",
+    category: "Политика"
+  },
+  {
+    id: "13",
+    year: 1956,
+    title: "XX съезд КПСС",
+    description: "Хрущёв выступил с докладом о культе личности Сталина, начало оттепели",
+    region: "Москва",
+    category: "Политика"
+  },
+  {
+    id: "14",
     year: 1957,
     title: "Запуск первого спутника",
     description: "4 октября СССР запустил первый искусственный спутник Земли 'Спутник-1'",
     region: "Байконур",
     category: "Космос"
+  },
+  {
+    id: "15",
+    year: 1961,
+    title: "Полёт Юрия Гагарина",
+    description: "12 апреля состоялся первый полёт человека в космос на корабле 'Восток-1'",
+    region: "Байконур",
+    category: "Космос"
+  },
+  {
+    id: "16",
+    year: 1963,
+    title: "Полёт Валентины Терешковой",
+    description: "16 июня первая женщина в космосе совершила полёт на корабле 'Восток-6'",
+    region: "Байконур",
+    category: "Космос"
+  },
+  {
+    id: "17",
+    year: 1965,
+    title: "Первый выход в открытый космос",
+    description: "18 марта Алексей Леонов совершил первый выход человека в открытый космос",
+    region: "Байконур",
+    category: "Космос"
+  },
+  {
+    id: "18",
+    year: 1970,
+    title: "Луноход-1",
+    description: "Первый в мире планетоход начал исследование Луны",
+    region: "Байконур",
+    category: "Космос"
+  },
+  {
+    id: "19",
+    year: 1975,
+    title: "Проект 'Союз-Аполлон'",
+    description: "Первая международная стыковка советского и американского кораблей",
+    region: "Космос",
+    category: "Космос"
+  },
+  {
+    id: "20",
+    year: 1980,
+    title: "Олимпиада в Москве",
+    description: "Летние Олимпийские игры прошли в столице СССР",
+    region: "Москва",
+    category: "Спорт"
+  },
+  {
+    id: "21",
+    year: 1985,
+    title: "Начало перестройки",
+    description: "М.С. Горбачёв стал генсеком, начались реформы перестройки и гласности",
+    region: "Москва",
+    category: "Политика"
+  },
+  {
+    id: "22",
+    year: 1986,
+    title: "Авария на Чернобыльской АЭС",
+    description: "26 апреля произошла крупнейшая ядерная катастрофа в истории",
+    region: "Чернобыль",
+    category: "Катастрофа"
+  },
+  {
+    id: "23",
+    year: 1989,
+    title: "Вывод войск из Афганистана",
+    description: "15 февраля завершён вывод советских войск из Афганистана",
+    region: "Афганистан",
+    category: "Война"
+  },
+  {
+    id: "24",
+    year: 1991,
+    title: "Распад СССР",
+    description: "26 декабря СССР прекратил существование, образовались независимые государства",
+    region: "Москва",
+    category: "Политика"
   }
 ];
 
@@ -210,7 +372,207 @@ const quizCategories = [
   "Первая мировая",
   "Вторая мировая",
   "Оттепель",
-  "Застой"
+  "Застой",
+  "Космос",
+  "Наука"
+];
+
+const historicalFigures: HistoricalFigure[] = [
+  {
+    id: "lenin",
+    name: "Владимир Ильич Ленин",
+    role: "Основатель СССР, революционер",
+    years: "1870-1924",
+    achievements: [
+      "Руководитель Октябрьской революции 1917 года",
+      "Председатель Совнаркома РСФСР и СССР",
+      "Создатель первого социалистического государства"
+    ],
+    quote: "Учиться, учиться и учиться!",
+    category: "Политики"
+  },
+  {
+    id: "stalin",
+    name: "Иосиф Виссарионович Сталин",
+    role: "Генеральный секретарь ЦК ВКП(б)",
+    years: "1878-1953",
+    achievements: [
+      "Индустриализация СССР",
+      "Победа в Великой Отечественной войне",
+      "Превращение СССР в сверхдержаву"
+    ],
+    quote: "Кадры решают всё",
+    category: "Политики"
+  },
+  {
+    id: "gagarin",
+    name: "Юрий Алексеевич Гагарин",
+    role: "Первый космонавт",
+    years: "1934-1968",
+    achievements: [
+      "Первый полёт человека в космос (12 апреля 1961)",
+      "Герой Советского Союза",
+      "Символ космической эры человечества"
+    ],
+    quote: "Поехали!",
+    category: "Космонавты"
+  },
+  {
+    id: "korolev",
+    name: "Сергей Павлович Королёв",
+    role: "Главный конструктор",
+    years: "1907-1966",
+    achievements: [
+      "Создатель первого спутника Земли",
+      "Конструктор космического корабля 'Восток'",
+      "Основоположник практической космонавтики"
+    ],
+    quote: "Космос наш!",
+    category: "Учёные"
+  },
+  {
+    id: "tereshkova",
+    name: "Валентина Владимировна Терешкова",
+    role: "Первая женщина-космонавт",
+    years: "1937-н.в.",
+    achievements: [
+      "Первая женщина в космосе (16 июня 1963)",
+      "Героиня Советского Союза",
+      "Единственная женщина, совершившая одиночный космический полёт"
+    ],
+    quote: "Эй! Небо! Сними шляпу!",
+    category: "Космонавты"
+  },
+  {
+    id: "zhukov",
+    name: "Георгий Константинович Жуков",
+    role: "Маршал Советского Союза",
+    years: "1896-1974",
+    achievements: [
+      "Командующий обороной Москвы и Ленинграда",
+      "Руководитель Сталинградской и Берлинской операций",
+      "Четырежды Герой Советского Союза"
+    ],
+    quote: "Выше голову, товарищи!",
+    category: "Военные"
+  },
+  {
+    id: "sakharov",
+    name: "Андрей Дмитриевич Сахаров",
+    role: "Физик-ядерщик, правозащитник",
+    years: "1921-1989",
+    achievements: [
+      "Создатель советской водородной бомбы",
+      "Лауреат Нобелевской премии мира",
+      "Академик АН СССР"
+    ],
+    quote: "Свобода мысли — единственная гарантия от заражения народа коллективными мифами",
+    category: "Учёные"
+  },
+  {
+    id: "kurchatov",
+    name: "Игорь Васильевич Курчатов",
+    role: "Физик-ядерщик",
+    years: "1903-1960",
+    achievements: [
+      "Руководитель советского атомного проекта",
+      "Создатель первой атомной бомбы СССР",
+      "Основатель Курчатовского института"
+    ],
+    quote: "Атом должен быть рабочим, а не солдатом",
+    category: "Учёные"
+  },
+  {
+    id: "landau",
+    name: "Лев Давидович Ландау",
+    role: "Физик-теоретик",
+    years: "1908-1968",
+    achievements: [
+      "Лауреат Нобелевской премии по физике",
+      "Создатель теории сверхтекучести",
+      "Основатель советской школы теоретической физики"
+    ],
+    quote: "Теоретическая физика — это то, чем занимаюсь я",
+    category: "Учёные"
+  },
+  {
+    id: "tupolev",
+    name: "Андрей Николаевич Туполев",
+    role: "Авиаконструктор",
+    years: "1888-1972",
+    achievements: [
+      "Создатель более 100 типов самолётов",
+      "Конструктор Ту-104, Ту-134, Ту-154",
+      "Трижды Герой Социалистического Труда"
+    ],
+    quote: "Самолёт должен быть красивым",
+    category: "Конструкторы"
+  },
+  {
+    id: "kalashnikov",
+    name: "Михаил Тимофеевич Калашников",
+    role: "Конструктор стрелкового оружия",
+    years: "1919-2013",
+    achievements: [
+      "Создатель автомата АК-47",
+      "Дважды Герой Социалистического Труда",
+      "Самое массовое оружие в мире"
+    ],
+    quote: "Я создал оружие для защиты Родины",
+    category: "Конструкторы"
+  },
+  {
+    id: "shostakovich",
+    name: "Дмитрий Дмитриевич Шостакович",
+    role: "Композитор",
+    years: "1906-1975",
+    achievements: [
+      "Автор 15 симфоний",
+      "Народный артист СССР",
+      "Один из величайших композиторов XX века"
+    ],
+    quote: "Искусство принадлежит народу",
+    category: "Деятели культуры"
+  },
+  {
+    id: "eisenstein",
+    name: "Сергей Михайлович Эйзенштейн",
+    role: "Кинорежиссёр",
+    years: "1898-1948",
+    achievements: [
+      "Создатель фильмов 'Броненосец Потёмкин', 'Александр Невский'",
+      "Основоположник теории монтажа",
+      "Лауреат Сталинской премии"
+    ],
+    quote: "Монтаж — нерв кинематографа",
+    category: "Деятели культуры"
+  },
+  {
+    id: "ulanova",
+    name: "Галина Сергеевна Уланова",
+    role: "Балерина",
+    years: "1910-1998",
+    achievements: [
+      "Прима-балерина Большого театра",
+      "Дважды Герой Социалистического Труда",
+      "Народная артистка СССР"
+    ],
+    quote: "Танец — это жизнь",
+    category: "Деятели культуры"
+  },
+  {
+    id: "yashin",
+    name: "Лев Иванович Яшин",
+    role: "Футболист, вратарь",
+    years: "1929-1990",
+    achievements: [
+      "Единственный вратарь — обладатель 'Золотого мяча'",
+      "Чемпион Олимпийских игр 1956",
+      "Лучший вратарь XX века по версии ФИФА"
+    ],
+    quote: "Радость побед нельзя сравнить ни с чем",
+    category: "Спортсмены"
+  }
 ];
 
 const mapRegions: MapRegion[] = [
@@ -438,7 +800,7 @@ export default function Index() {
 
       <div className="container mx-auto px-4 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
             <TabsTrigger value="map" className="gap-2">
               <Icon name="Map" size={18} />
               Карта
@@ -450,6 +812,10 @@ export default function Index() {
             <TabsTrigger value="timeline" className="gap-2">
               <Icon name="Calendar" size={18} />
               Хронология
+            </TabsTrigger>
+            <TabsTrigger value="people" className="gap-2">
+              <Icon name="Users" size={18} />
+              Личности
             </TabsTrigger>
             <TabsTrigger value="archive" className="gap-2">
               <Icon name="Archive" size={18} />
@@ -708,6 +1074,55 @@ export default function Index() {
                       ))}
                   </div>
                 </ScrollArea>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="people" className="space-y-6 animate-fade-in">
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-display">Известные личности СССР</CardTitle>
+                <CardDescription>Великие люди, изменившие ход истории</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {historicalFigures.map((figure) => (
+                    <Card key={figure.id} className="hover:shadow-lg transition-all hover:scale-105 border-primary/20">
+                      <CardHeader>
+                        <div className="flex items-start justify-between mb-2">
+                          <Badge variant="outline" className="bg-primary/10">
+                            {figure.category}
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-xl font-display">{figure.name}</CardTitle>
+                        <CardDescription className="text-sm">{figure.role}</CardDescription>
+                        <p className="text-xs text-muted-foreground mt-1">{figure.years}</p>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
+                            <Icon name="Award" size={16} className="text-primary" />
+                            Достижения
+                          </h4>
+                          <ul className="space-y-1">
+                            {figure.achievements.map((achievement, idx) => (
+                              <li key={idx} className="text-xs text-muted-foreground flex items-start gap-2">
+                                <span className="text-primary mt-1">•</span>
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="pt-3 border-t border-border">
+                          <p className="text-xs italic text-muted-foreground flex gap-2">
+                            <Icon name="Quote" size={14} className="text-primary flex-shrink-0 mt-0.5" />
+                            <span>"{figure.quote}"</span>
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
