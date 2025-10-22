@@ -181,18 +181,20 @@ export default function Index() {
                 <CardDescription>Выберите регион для просмотра исторических событий</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative bg-muted rounded-lg p-8 mb-6" style={{ height: "500px" }}>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                    <Icon name="Map" size={200} />
-                  </div>
+                <div className="relative rounded-lg overflow-hidden mb-6" style={{ height: "600px" }}>
+                  <img 
+                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/02529170-684d-4a72-9fe8-42d4b48fbb06.jpg"
+                    alt="Карта СССР"
+                    className="w-full h-full object-cover"
+                  />
                   {mapRegions.map((region) => (
                     <button
                       key={region.id}
                       onClick={() => setSelectedRegion(region.id)}
-                      className={`absolute w-4 h-4 rounded-full transition-all hover:scale-150 ${
+                      className={`absolute w-6 h-6 rounded-full transition-all hover:scale-150 ${
                         selectedRegion === region.id
-                          ? "bg-primary ring-4 ring-primary/30 scale-150"
-                          : "bg-secondary hover:bg-primary"
+                          ? "bg-primary ring-4 ring-primary/30 scale-150 shadow-lg"
+                          : "bg-secondary hover:bg-primary shadow-md"
                       }`}
                       style={{ left: `${region.x}%`, top: `${region.y}%` }}
                     >
@@ -202,8 +204,8 @@ export default function Index() {
                   {mapRegions.map((region) => (
                     <div
                       key={`label-${region.id}`}
-                      className="absolute text-xs font-semibold pointer-events-none"
-                      style={{ left: `${region.x}%`, top: `${region.y - 5}%` }}
+                      className="absolute text-sm font-bold pointer-events-none bg-white/90 px-2 py-1 rounded shadow-sm"
+                      style={{ left: `${region.x}%`, top: `${region.y - 7}%` }}
                     >
                       {region.name}
                     </div>
