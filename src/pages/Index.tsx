@@ -22,6 +22,7 @@ interface QuizQuestion {
   options: string[];
   correctAnswer: number;
   explanation: string;
+  category: string;
 }
 
 interface MapRegion {
@@ -86,29 +87,130 @@ const quizQuestions: QuizQuestion[] = [
     question: "В каком году был образован СССР?",
     options: ["1917", "1922", "1924", "1925"],
     correctAnswer: 1,
-    explanation: "СССР был образован 30 декабря 1922 года путём подписания договора четырьмя республиками."
+    explanation: "СССР был образован 30 декабря 1922 года путём подписания договора четырьмя республиками.",
+    category: "Образование СССР"
   },
   {
     id: "q2",
-    question: "Кто был первым космонавтом в истории?",
-    options: ["Герман Титов", "Юрий Гагарин", "Валентина Терешкова", "Алексей Леонов"],
-    correctAnswer: 1,
-    explanation: "Юрий Гагарин совершил первый полёт в космос 12 апреля 1961 года на корабле 'Восток-1'."
+    question: "Какие республики подписали договор об образовании СССР?",
+    options: ["РСФСР, УССР, БССР, ЗСФСР", "РСФСР, УССР, Казахстан", "РСФСР, БССР, Грузия", "РСФСР, УССР, БССР, Узбекистан"],
+    correctAnswer: 0,
+    explanation: "Договор об образовании СССР подписали четыре республики: РСФСР, Украинская ССР, Белорусская ССР и Закавказская СФСР.",
+    category: "Образование СССР"
   },
   {
     id: "q3",
-    question: "Когда началась Великая Отечественная война?",
-    options: ["1939", "1940", "1941", "1942"],
-    correctAnswer: 2,
-    explanation: "Великая Отечественная война началась 22 июня 1941 года с нападения нацистской Германии на СССР."
+    question: "Кто был первым председателем СНК СССР?",
+    options: ["И.В. Сталин", "В.И. Ленин", "Л.Д. Троцкий", "М.И. Калинин"],
+    correctAnswer: 1,
+    explanation: "Владимир Ильич Ленин был первым председателем Совета Народных Комиссаров СССР с 1922 по 1924 год.",
+    category: "Образование СССР"
   },
   {
     id: "q4",
-    question: "В каком году СССР запустил первый искусственный спутник Земли?",
-    options: ["1955", "1957", "1960", "1961"],
+    question: "Участвовала ли Россия в Первой мировой войне?",
+    options: ["Нет", "Да, на стороне Антанты", "Да, на стороне Германии", "Была нейтральной"],
     correctAnswer: 1,
-    explanation: "Первый искусственный спутник 'Спутник-1' был запущен 4 октября 1957 года."
+    explanation: "Российская империя участвовала в Первой мировой войне на стороне Антанты с 1914 года до заключения Брестского мира в 1918 году.",
+    category: "Первая мировая"
+  },
+  {
+    id: "q5",
+    question: "В каком году Россия вышла из Первой мировой войны?",
+    options: ["1917", "1918", "1919", "1920"],
+    correctAnswer: 1,
+    explanation: "Советская Россия вышла из войны в 1918 году после подписания Брестского мира с Германией 3 марта.",
+    category: "Первая мировая"
+  },
+  {
+    id: "q6",
+    question: "Какой договор завершил участие России в Первой мировой войне?",
+    options: ["Версальский", "Брестский мир", "Рапалльский", "Рижский"],
+    correctAnswer: 1,
+    explanation: "Брестский мир был подписан 3 марта 1918 года между Советской Россией и Центральными державами.",
+    category: "Первая мировая"
+  },
+  {
+    id: "q7",
+    question: "Когда началась Великая Отечественная война?",
+    options: ["1 сентября 1939", "22 июня 1941", "9 мая 1945", "7 ноября 1941"],
+    correctAnswer: 1,
+    explanation: "Великая Отечественная война началась 22 июня 1941 года с нападения нацистской Германии на СССР.",
+    category: "Вторая мировая"
+  },
+  {
+    id: "q8",
+    question: "Какая битва стала переломным моментом в Великой Отечественной войне?",
+    options: ["Битва за Москву", "Сталинградская битва", "Курская битва", "Битва за Берлин"],
+    correctAnswer: 1,
+    explanation: "Сталинградская битва (1942-1943) стала переломным моментом, после которого стратегическая инициатива перешла к СССР.",
+    category: "Вторая мировая"
+  },
+  {
+    id: "q9",
+    question: "Когда закончилась Великая Отечественная война?",
+    options: ["8 мая 1945", "9 мая 1945", "2 сентября 1945", "1 мая 1945"],
+    correctAnswer: 1,
+    explanation: "9 мая 1945 года Германия капитулировала, этот день стал Днём Победы в Великой Отечественной войне.",
+    category: "Вторая мировая"
+  },
+  {
+    id: "q10",
+    question: "Как называлась политика либерализации после смерти Сталина?",
+    options: ["Перестройка", "Оттепель", "Гласность", "НЭП"],
+    correctAnswer: 1,
+    explanation: "Оттепель — период либерализации в СССР при Н.С. Хрущёве (1953-1964), характеризовавшийся ослаблением тоталитарного режима.",
+    category: "Оттепель"
+  },
+  {
+    id: "q11",
+    question: "Кто был лидером СССР в период Оттепели?",
+    options: ["И.В. Сталин", "Н.С. Хрущёв", "Л.И. Брежнев", "М.С. Горбачёв"],
+    correctAnswer: 1,
+    explanation: "Никита Сергеевич Хрущёв руководил СССР в 1953-1964 годах, период известный как Оттепель.",
+    category: "Оттепель"
+  },
+  {
+    id: "q12",
+    question: "В каком году состоялся XX съезд КПСС с разоблачением культа личности Сталина?",
+    options: ["1953", "1956", "1961", "1964"],
+    correctAnswer: 1,
+    explanation: "XX съезд КПСС состоялся в феврале 1956 года, на нём Хрущёв выступил с докладом о культе личности Сталина.",
+    category: "Оттепель"
+  },
+  {
+    id: "q13",
+    question: "Как называется период правления Л.И. Брежнева?",
+    options: ["Оттепель", "Застой", "Перестройка", "НЭП"],
+    correctAnswer: 1,
+    explanation: "Период застоя (1964-1985) — время правления Брежнева, характеризовавшееся замедлением темпов экономического развития.",
+    category: "Застой"
+  },
+  {
+    id: "q14",
+    question: "В каком году началась эпоха застоя?",
+    options: ["1953", "1964", "1985", "1991"],
+    correctAnswer: 1,
+    explanation: "Эпоха застоя началась в 1964 году, когда Леонид Брежнев пришёл к власти после отставки Хрущёва.",
+    category: "Застой"
+  },
+  {
+    id: "q15",
+    question: "Какое событие не относится к периоду застоя?",
+    options: ["Олимпиада-80 в Москве", "Афганская война", "Полёт Гагарина", "Хельсинкские соглашения"],
+    correctAnswer: 2,
+    explanation: "Полёт Гагарина состоялся в 1961 году, до начала эпохи застоя. Остальные события произошли в 1964-1985 годах.",
+    category: "Застой"
   }
+];
+
+const quizCategories = [
+  "Все темы",
+  "Образование СССР",
+  "Первая мировая",
+  "Вторая мировая",
+  "Оттепель",
+  "Застой"
 ];
 
 const mapRegions: MapRegion[] = [
@@ -281,17 +383,22 @@ export default function Index() {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [activeTab, setActiveTab] = useState("map");
+  const [selectedCategory, setSelectedCategory] = useState("Все темы");
+
+  const filteredQuestions = selectedCategory === "Все темы" 
+    ? quizQuestions 
+    : quizQuestions.filter(q => q.category === selectedCategory);
 
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
     setShowResult(true);
-    if (answerIndex === quizQuestions[currentQuiz].correctAnswer) {
+    if (answerIndex === filteredQuestions[currentQuiz].correctAnswer) {
       setScore(score + 1);
     }
   };
 
   const nextQuestion = () => {
-    if (currentQuiz < quizQuestions.length - 1) {
+    if (currentQuiz < filteredQuestions.length - 1) {
       setCurrentQuiz(currentQuiz + 1);
       setSelectedAnswer(null);
       setShowResult(false);
@@ -299,6 +406,14 @@ export default function Index() {
   };
 
   const resetQuiz = () => {
+    setCurrentQuiz(0);
+    setSelectedAnswer(null);
+    setShowResult(false);
+    setScore(0);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
     setCurrentQuiz(0);
     setSelectedAnswer(null);
     setShowResult(false);
@@ -457,20 +572,42 @@ export default function Index() {
               <CardHeader>
                 <CardTitle className="font-display">Викторина по истории СССР</CardTitle>
                 <CardDescription>
-                  Вопрос {currentQuiz + 1} из {quizQuestions.length}
+                  Вопрос {currentQuiz + 1} из {filteredQuestions.length}
                 </CardDescription>
-                <Progress value={((currentQuiz + 1) / quizQuestions.length) * 100} className="mt-2" />
+                <div className="mt-4">
+                  <div className="text-sm font-semibold mb-2">Выберите тему:</div>
+                  <div className="flex flex-wrap gap-2">
+                    {quizCategories.map((cat) => (
+                      <Badge
+                        key={cat}
+                        variant={selectedCategory === cat ? "default" : "outline"}
+                        className={`cursor-pointer transition-all ${
+                          selectedCategory === cat ? "bg-soviet-gradient text-white" : ""
+                        }`}
+                        onClick={() => handleCategoryChange(cat)}
+                      >
+                        {cat}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <Progress value={((currentQuiz + 1) / filteredQuestions.length) * 100} className="mt-4" />
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">{quizQuestions[currentQuiz].question}</h3>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="secondary" className="text-xs">
+                      {filteredQuestions[currentQuiz].category}
+                    </Badge>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-4">{filteredQuestions[currentQuiz].question}</h3>
                   <div className="grid gap-3">
-                    {quizQuestions[currentQuiz].options.map((option, index) => (
+                    {filteredQuestions[currentQuiz].options.map((option, index) => (
                       <Button
                         key={index}
                         variant={
                           showResult
-                            ? index === quizQuestions[currentQuiz].correctAnswer
+                            ? index === filteredQuestions[currentQuiz].correctAnswer
                               ? "default"
                               : selectedAnswer === index
                               ? "destructive"
@@ -483,12 +620,12 @@ export default function Index() {
                       >
                         <span className="mr-3 font-semibold">{String.fromCharCode(65 + index)}.</span>
                         {option}
-                        {showResult && index === quizQuestions[currentQuiz].correctAnswer && (
+                        {showResult && index === filteredQuestions[currentQuiz].correctAnswer && (
                           <Icon name="CheckCircle2" className="ml-auto" size={20} />
                         )}
                         {showResult &&
                           selectedAnswer === index &&
-                          index !== quizQuestions[currentQuiz].correctAnswer && (
+                          index !== filteredQuestions[currentQuiz].correctAnswer && (
                             <Icon name="XCircle" className="ml-auto" size={20} />
                           )}
                       </Button>
@@ -499,9 +636,9 @@ export default function Index() {
                 {showResult && (
                   <Card className="bg-muted animate-scale-in">
                     <CardContent className="pt-6">
-                      <p className="text-sm">{quizQuestions[currentQuiz].explanation}</p>
+                      <p className="text-sm">{filteredQuestions[currentQuiz].explanation}</p>
                       <div className="flex gap-3 mt-4">
-                        {currentQuiz < quizQuestions.length - 1 ? (
+                        {currentQuiz < filteredQuestions.length - 1 ? (
                           <Button onClick={nextQuestion}>
                             Следующий вопрос
                             <Icon name="ArrowRight" className="ml-2" size={16} />
@@ -509,7 +646,7 @@ export default function Index() {
                         ) : (
                           <div className="w-full">
                             <p className="text-lg font-semibold mb-3">
-                              Ваш результат: {score} из {quizQuestions.length}
+                              Ваш результат: {score} из {filteredQuestions.length}
                             </p>
                             <Button onClick={resetQuiz}>
                               <Icon name="RotateCcw" className="mr-2" size={16} />
