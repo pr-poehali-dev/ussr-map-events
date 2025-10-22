@@ -107,9 +107,6 @@ export default {
 			backgroundImage: {
 				'soviet-gradient': 'linear-gradient(135deg, #CC0000 0%, #FFD700 100%)'
 			}
-			backgroundImage: {
-				'soviet-gradient': 'linear-gradient(135deg, #CC0000 0%, #FFD700 100%)'
-			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
