@@ -351,7 +351,7 @@ export default function Index() {
               <CardContent>
                 <div className="relative rounded-lg overflow-hidden mb-6" style={{ height: "600px" }}>
                   <img 
-                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/02529170-684d-4a72-9fe8-42d4b48fbb06.jpg"
+                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/85298473-3104-4169-907b-3f087f7a6d8e.jpg"
                     alt="Карта СССР"
                     className="w-full h-full object-cover"
                   />
