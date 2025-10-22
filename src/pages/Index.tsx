@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import MapTab from "@/components/historical/MapTab";
 import QuizTab from "@/components/historical/QuizTab";
@@ -61,14 +63,36 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
       <div className="border-b-2 border-red-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-lg bg-soviet-gradient flex items-center justify-center shadow-md">
-              <Icon name="Star" size={24} className="text-white" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold font-display text-red-800">История СССР</h1>
-              <p className="text-sm text-red-600">Интерактивный исторический портал</p>
-            </div>
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <div className="w-12 h-12 rounded-lg bg-soviet-gradient flex items-center justify-center shadow-md">
+                <Icon name="Star" size={24} className="text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold font-display text-red-800">История СССР</h1>
+                <p className="text-sm text-red-600">Интерактивный исторический портал</p>
+              </div>
+            </Link>
+            <nav className="flex gap-2">
+              <Link to="/collections">
+                <Button variant="ghost" className="gap-2">
+                  <Icon name="Library" size={18} />
+                  Коллекции
+                </Button>
+              </Link>
+              <Link to="/timeline">
+                <Button variant="ghost" className="gap-2">
+                  <Icon name="Clock" size={18} />
+                  Хронология
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="ghost" className="gap-2">
+                  <Icon name="Info" size={18} />
+                  О проекте
+                </Button>
+              </Link>
+            </nav>
           </div>
         </div>
       </div>

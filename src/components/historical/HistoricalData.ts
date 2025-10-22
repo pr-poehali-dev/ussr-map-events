@@ -538,7 +538,7 @@ export const historicalFigures: HistoricalFigure[] = [
     ],
     quote: "Поехали!",
     category: "Космонавты",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Yuri_Gagarin_in_Sweden.jpg/220px-Yuri_Gagarin_in_Sweden.jpg"
+    imageUrl: "https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/472632ce-4986-47fb-864d-4e9043875dc7.jpg"
   },
   {
     id: "korolev",
@@ -552,7 +552,7 @@ export const historicalFigures: HistoricalFigure[] = [
     ],
     quote: "Главное — не опоздать",
     category: "Конструкторы",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Sergei_Korolev_1938.jpg/220px-Sergei_Korolev_1938.jpg"
+    imageUrl: "https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/a127cd83-8d01-4f7b-a841-4a0fe17ac07b.jpg"
   },
   {
     id: "tereshkova",
@@ -566,7 +566,7 @@ export const historicalFigures: HistoricalFigure[] = [
     ],
     quote: "Эй! Небо, сними шляпу!",
     category: "Космонавты",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/RIAN_archive_612748_Valentina_Tereshkova.jpg/220px-RIAN_archive_612748_Valentina_Tereshkova.jpg"
+    imageUrl: "https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/cac3dbdf-36da-47e9-abf7-2d92ba0e03bf.jpg"
   },
   {
     id: "zhukov",
