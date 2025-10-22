@@ -24,6 +24,19 @@ interface QuizQuestion {
   explanation: string;
 }
 
+interface MapRegion {
+  id: string;
+  name: string;
+  x: number;
+  y: number;
+  events: number;
+  description: string;
+  founded?: string;
+  population?: string;
+  significance: string;
+  keyEvents: string[];
+}
+
 const historicalEvents: HistoricalEvent[] = [
   {
     id: "1",
@@ -98,12 +111,167 @@ const quizQuestions: QuizQuestion[] = [
   }
 ];
 
-const mapRegions = [
-  { id: "moscow", name: "Москва", x: 55, y: 35, events: 15 },
-  { id: "leningrad", name: "Ленинград", x: 50, y: 25, events: 12 },
-  { id: "baikonur", name: "Байконур", x: 68, y: 55, events: 8 },
-  { id: "stalingrad", name: "Сталинград", x: 58, y: 48, events: 10 },
-  { id: "kiev", name: "Киев", x: 48, y: 45, events: 9 }
+const mapRegions: MapRegion[] = [
+  { 
+    id: "moscow", 
+    name: "Москва", 
+    x: 55, 
+    y: 35, 
+    events: 15,
+    description: "Столица СССР, политический и культурный центр страны",
+    founded: "1147",
+    population: "8.9 млн (1989)",
+    significance: "Административный центр СССР, место принятия важнейших государственных решений",
+    keyEvents: [
+      "Образование СССР (1922)",
+      "Оборона Москвы (1941)",
+      "Первомайские парады"
+    ]
+  },
+  { 
+    id: "leningrad", 
+    name: "Ленинград", 
+    x: 50, 
+    y: 25, 
+    events: 12,
+    description: "Город-герой, культурная столица СССР",
+    founded: "1703",
+    population: "5.0 млн (1989)",
+    significance: "Центр науки и культуры, место Октябрьской революции",
+    keyEvents: [
+      "Октябрьская революция (1917)",
+      "Блокада Ленинграда (1941-1944)",
+      "Научный центр"
+    ]
+  },
+  { 
+    id: "baikonur", 
+    name: "Байконур", 
+    x: 68, 
+    y: 55, 
+    events: 8,
+    description: "Космодром, база советской космической программы",
+    founded: "1955",
+    population: "70 тыс (1989)",
+    significance: "Первый и крупнейший в мире космодром",
+    keyEvents: [
+      "Запуск Спутника-1 (1957)",
+      "Полёт Гагарина (1961)",
+      "Программа Союз"
+    ]
+  },
+  { 
+    id: "stalingrad", 
+    name: "Сталинград", 
+    x: 58, 
+    y: 48, 
+    events: 10,
+    description: "Город-герой, место переломного сражения ВОВ",
+    founded: "1589",
+    population: "1.0 млн (1989)",
+    significance: "Символ стойкости советского народа в Великой Отечественной войне",
+    keyEvents: [
+      "Сталинградская битва (1942-1943)",
+      "Мамаев курган",
+      "Промышленный центр"
+    ]
+  },
+  { 
+    id: "kiev", 
+    name: "Киев", 
+    x: 48, 
+    y: 45, 
+    events: 9,
+    description: "Столица Украинской ССР, древний славянский город",
+    founded: "882",
+    population: "2.6 млн (1989)",
+    significance: "Культурный и промышленный центр Украинской ССР",
+    keyEvents: [
+      "Освобождение от фашистов (1943)",
+      "Промышленное развитие",
+      "Культурный центр"
+    ]
+  },
+  { 
+    id: "minsk", 
+    name: "Минск", 
+    x: 52, 
+    y: 38, 
+    events: 7,
+    description: "Столица Белорусской ССР, город-герой",
+    founded: "1067",
+    population: "1.6 млн (1989)",
+    significance: "Восстановлен после войны, символ возрождения",
+    keyEvents: [
+      "Освобождение (1944)",
+      "Послевоенное восстановление",
+      "Промышленный центр"
+    ]
+  },
+  { 
+    id: "tbilisi", 
+    name: "Тбилиси", 
+    x: 56, 
+    y: 60, 
+    events: 6,
+    description: "Столица Грузинской ССР",
+    founded: "IV век",
+    population: "1.3 млн (1989)",
+    significance: "Культурный центр Закавказья",
+    keyEvents: [
+      "Грузинская культура",
+      "Винодельческий регион",
+      "Туристический центр"
+    ]
+  },
+  { 
+    id: "tashkent", 
+    name: "Ташкент", 
+    x: 72, 
+    y: 62, 
+    events: 8,
+    description: "Столица Узбекской ССР, крупнейший город Средней Азии",
+    founded: "II век до н.э.",
+    population: "2.1 млн (1989)",
+    significance: "Экономический и культурный центр Средней Азии",
+    keyEvents: [
+      "Восстановление после землетрясения (1966)",
+      "Хлопковый регион",
+      "Восточный центр"
+    ]
+  },
+  { 
+    id: "vladivostok", 
+    name: "Владивосток", 
+    x: 92, 
+    y: 52, 
+    events: 5,
+    description: "Тихоокеанский порт СССР",
+    founded: "1860",
+    population: "650 тыс (1989)",
+    significance: "Главная военно-морская база Тихоокеанского флота",
+    keyEvents: [
+      "Тихоокеанский флот",
+      "Восточный форпост",
+      "Порт"
+    ]
+  },
+  { 
+    id: "novosibirsk", 
+    name: "Новосибирск", 
+    x: 75, 
+    y: 42, 
+    events: 6,
+    description: "Крупнейший город Сибири, научный центр",
+    founded: "1893",
+    population: "1.4 млн (1989)",
+    significance: "Академгородок, центр сибирской науки",
+    keyEvents: [
+      "Академгородок (1957)",
+      "Научный центр",
+      "Промышленность"
+    ]
+  }
 ];
 
 export default function Index() {
@@ -212,24 +380,74 @@ export default function Index() {
                   ))}
                 </div>
 
-                {selectedRegion && (
-                  <Card className="animate-scale-in">
-                    <CardHeader>
-                      <CardTitle className="text-lg font-display">
-                        {mapRegions.find((r) => r.id === selectedRegion)?.name}
-                      </CardTitle>
-                      <CardDescription>
-                        Всего событий: {mapRegions.find((r) => r.id === selectedRegion)?.events}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">
-                        Важный исторический регион, сыгравший значительную роль в развитии СССР.
-                        События этого региона оказали влияние на ход истории всей страны.
-                      </p>
-                    </CardContent>
-                  </Card>
-                )}
+                {selectedRegion && (() => {
+                  const region = mapRegions.find((r) => r.id === selectedRegion);
+                  if (!region) return null;
+                  
+                  return (
+                    <Card className="animate-scale-in">
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <CardTitle className="text-2xl font-display mb-2">
+                              {region.name}
+                            </CardTitle>
+                            <CardDescription className="text-base">
+                              {region.description}
+                            </CardDescription>
+                          </div>
+                          <Badge className="bg-soviet-gradient text-white">
+                            {region.events} событий
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Icon name="Calendar" size={16} />
+                              <span>Основан</span>
+                            </div>
+                            <p className="font-semibold">{region.founded}</p>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Icon name="Users" size={16} />
+                              <span>Население</span>
+                            </div>
+                            <p className="font-semibold">{region.population}</p>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Icon name="Star" size={16} />
+                            <span>Историческое значение</span>
+                          </div>
+                          <p className="text-sm leading-relaxed">{region.significance}</p>
+                        </div>
+
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2 text-sm font-semibold">
+                            <Icon name="Bookmark" size={16} className="text-primary" />
+                            <span>Ключевые события</span>
+                          </div>
+                          <div className="space-y-2">
+                            {region.keyEvents.map((event, idx) => (
+                              <div 
+                                key={idx} 
+                                className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                              >
+                                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <span className="text-sm">{event}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })()}
               </CardContent>
             </Card>
           </TabsContent>
