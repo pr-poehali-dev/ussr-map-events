@@ -464,33 +464,51 @@ export default function Index() {
                 <CardDescription>Выберите регион для просмотра исторических событий</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative rounded-lg overflow-hidden mb-6 bg-muted/30" style={{ height: "600px" }}>
-                  <img 
-                    src="https://cdn.poehali.dev/projects/dca6cab3-3bc0-4c42-9294-300bd101762c/files/467927c3-822b-40af-a0a1-008b12f88180.jpg"
-                    alt="Карта СССР"
-                    className="w-full h-full object-contain"
-                  />
+                <div className="relative rounded-lg overflow-hidden mb-6 bg-map-gradient border border-primary/20" style={{ height: "600px" }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
+                  <svg 
+                    className="absolute inset-0 w-full h-full opacity-30" 
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-primary/20"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100" height="100" fill="url(#grid)" />
+                  </svg>
+                  
+                  <div className="absolute inset-0 flex items-center justify-center opacity-5">
+                    <Icon name="Map" size={300} className="text-primary" />
+                  </div>
+
                   {mapRegions.map((region) => (
-                    <button
-                      key={region.id}
-                      onClick={() => setSelectedRegion(region.id)}
-                      className={`absolute w-6 h-6 rounded-full transition-all hover:scale-150 ${
-                        selectedRegion === region.id
-                          ? "bg-primary ring-4 ring-primary/30 scale-150 shadow-lg"
-                          : "bg-secondary hover:bg-primary shadow-md"
-                      }`}
-                      style={{ left: `${region.x}%`, top: `${region.y}%` }}
-                    >
-                      <span className="sr-only">{region.name}</span>
-                    </button>
-                  ))}
-                  {mapRegions.map((region) => (
-                    <div
-                      key={`label-${region.id}`}
-                      className="absolute text-sm font-bold pointer-events-none bg-white/90 px-2 py-1 rounded shadow-sm"
-                      style={{ left: `${region.x}%`, top: `${region.y - 7}%` }}
-                    >
-                      {region.name}
+                    <div key={region.id} className="absolute" style={{ left: `${region.x}%`, top: `${region.y}%` }}>
+                      <button
+                        onClick={() => setSelectedRegion(region.id)}
+                        className={`relative w-8 h-8 rounded-full transition-all duration-300 group ${
+                          selectedRegion === region.id
+                            ? "bg-primary ring-4 ring-primary/40 scale-125 shadow-lg shadow-primary/50"
+                            : "bg-secondary hover:bg-primary shadow-md hover:scale-110"
+                        }`}
+                      >
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent" />
+                        <span className="sr-only">{region.name}</span>
+                        <div className={`absolute -top-1 -right-1 w-3 h-3 rounded-full ${
+                          selectedRegion === region.id ? "bg-primary animate-pulse" : "bg-secondary/50"
+                        }`} />
+                      </button>
+                      
+                      <div className={`absolute left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap transition-all ${
+                        selectedRegion === region.id 
+                          ? "text-primary font-bold scale-110" 
+                          : "text-foreground/80 font-semibold"
+                      }`}>
+                        <div className="bg-card/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/20 shadow-lg">
+                          {region.name}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>

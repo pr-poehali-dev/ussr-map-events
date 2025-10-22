@@ -105,7 +105,8 @@ export default {
 				'scale-in': 'scale-in 0.2s ease-out'
 			},
 			backgroundImage: {
-				'soviet-gradient': 'linear-gradient(135deg, #CC0000 0%, #FFD700 100%)'
+				'soviet-gradient': 'linear-gradient(135deg, #B91C1C 0%, #166534 100%)',
+				'map-gradient': 'linear-gradient(180deg, #14532d 0%, #052e16 100%)'
 			}
 		}
 	},
